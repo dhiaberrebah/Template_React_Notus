@@ -40,17 +40,21 @@ export default function Navbar(props) {
               </li>
               <button className="text-lightBlue-500 background-transparent font-bold uppercase px-3 py-1 text-sm outline-none focus:outline-none mr-0 ml-3 mb-1 ease-linear transition-all duration-150" type="button">
 Search compagne </button>
-<button className="text-lightBlue-500 background-transparent font-bold uppercase px-3 py-1 text-sm outline-none focus:outline-none mr-3 ml-3. mb-1 ease-linear transition-all duration-150" type="button">
+
+<a
+href="/auth/login" 
+className="text-lightBlue-500 background-transparent font-bold uppercase px-3 py-1 text-sm outline-none focus:outline-none mr-3 ml-3. mb-1 ease-linear transition-all duration-150" type="button">
   Connexion
-</button>
-              <li className="flex items-center">
-                <button
+</a>
+             
+                <a
+                 href="/landing" 
                   className="bg-lightBlue-500 text-white active:bg-lightBlue-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
                   type="button"
                 >
                   <i className="fas fa-arrow-alt-circle-down"></i> Start a collect
-                </button>
-              </li>
+                </a>
+              
             </ul>
           </div>
         </div>

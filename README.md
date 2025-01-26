@@ -28,7 +28,6 @@ If you like bright and fresh colors, you will love this Free Tailwind CSS Templa
 - (If not) Run in terminal `npm start`
 - Navigate to https://localhost:3000
 - Check more about [Tailwind CSS](https://tailwindcss.com/?ref=creativetim)
-
 ### Pages
 
 If you want to get inspiration or just show something directly to your clients,
