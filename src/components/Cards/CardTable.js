@@ -1,16 +1,22 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState , useEffect } from "react";
 import PropTypes from "prop-types";
 
 // components
 import { getAllUsers} from "../../services/apiUser";
 export default function CardTable({ color }) {
 const [users , setUsers] = useState([])
+
 const getUsers = useCallback(async()=>{
-  await getAllUsers().then((res)=>{
-    console.log(res);
+  await getAllUsers()
+  .then((res)=>{
+    console.log(res.data.userList);
+    setUsers(res.data.userList);
+    console.log(users);
   })
   .catch((err)=> console.log(err));
 },[]);
+
+useEffect(()=>{getUsers()},[getUsers])
   return (
     <>
       <div
