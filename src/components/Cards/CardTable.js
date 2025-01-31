@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import PropTypes from "prop-types";
 
 // components
-
-import TableDropdown from "components/Dropdowns/TableDropdown.js";
-
+import { getAllUsers} from "../../services/apiUser";
 export default function CardTable({ color }) {
+const [users , setUsers] = useState([])
+const getUsers = useCallback(async()=>{
+  await getAllUsers().then((res)=>{
+    console.log(res);
+  })
+  .catch((err)=> console.log(err));
+},[]);
   return (
     <>
       <div
@@ -90,6 +95,16 @@ export default function CardTable({ color }) {
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
+                >
+                  Action
+                </th>
+                <th
+                  className={
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
+                    (color === "light"
+                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                  }
                 ></th>
               </tr>
             </thead>
@@ -107,54 +122,25 @@ export default function CardTable({ color }) {
                       +(color === "light" ? "text-blueGray-600" : "text-white")
                     }
                   >
-                    Argon Design System
+                    First Name
                   </span>
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  $2,500 USD
+                  Last Name
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <i className="fas fa-circle text-orange-500 mr-2"></i> pending
+                  Email
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <div className="flex">
-                    <img
-                      src={require("assets/img/team-1-800x800.jpg").default}
-                      alt="..."
-                      className="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
-                    ></img>
-                    <img
-                      src={require("assets/img/team-2-800x800.jpg").default}
-                      alt="..."
-                      className="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                    ></img>
-                    <img
-                      src={require("assets/img/team-3-800x800.jpg").default}
-                      alt="..."
-                      className="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                    ></img>
-                    <img
-                      src={require("assets/img/team-4-470x470.png").default}
-                      alt="..."
-                      className="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                    ></img>
-                  </div>
+                  Age
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <div className="flex items-center">
-                    <span className="mr-2">60%</span>
-                    <div className="relative w-full">
-                      <div className="overflow-hidden h-2 text-xs flex rounded bg-red-200">
-                        <div
-                          style={{ width: "60%" }}
-                          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
+                  Created At
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                  <TableDropdown />
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                <button className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                  Delete
+                </button>
                 </td>
               </tr>
               
