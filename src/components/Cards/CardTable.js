@@ -52,7 +52,7 @@ useEffect(()=>{getUsers()},[getUsers])
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  First Name
+                  Prénom
                 </th>
                 <th
                   className={
@@ -62,7 +62,7 @@ useEffect(()=>{getUsers()},[getUsers])
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Last Name
+                  Nom
                 </th>
                 <th
                   className={
