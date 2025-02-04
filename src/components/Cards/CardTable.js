@@ -2,7 +2,7 @@ import React, { useCallback, useState , useEffect } from "react";
 import PropTypes from "prop-types";
 
 // components
-import { getAllUsers} from "../../services/apiUser";
+import { getAllUsers} from "../../Services/apiUser";
 export default function CardTable({ color }) {
 const [users , setUsers] = useState([])
 
