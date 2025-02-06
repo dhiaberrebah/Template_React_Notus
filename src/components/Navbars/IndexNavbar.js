@@ -18,6 +18,7 @@ export default function Navbar(props) {
             >
               Donation TN
             </Link>
+            
             <button
               className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
@@ -26,6 +27,8 @@ export default function Navbar(props) {
               <i className="fas fa-bars"></i>
             </button>
           </div>
+          
+          
           <div
             className={
               "lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none" +
